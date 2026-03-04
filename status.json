@@ -1,0 +1,9 @@
+{
+  "currentPhaseLabel": "Phase 0 · Foundations & Voice Trainer",
+  "statusSummary": "Sessions are flowing, traits are being learned.",
+  "statusPhase": "Voice trainer, traits pipeline, and internal console are online.",
+  "nextMilestone": "Hook persona updates and first content drafts into the pipeline.",
+  "roadmapProgressPercent": 55,
+  "lastUpdatedHuman": "Updated after wiring trainer → Supabase → console loop."
+}
+
