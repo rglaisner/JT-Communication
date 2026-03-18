@@ -492,10 +492,10 @@
             <div class="hero-meta" id="hero-meta">
               <span class="badge">
                 <span class="badge-dot"></span>
-                <span id="current-phase-label">Phase 0 · Foundations &amp; First Voice-to-Ideas Loop</span>
+                <span id="current-phase-label">Phase 1 · Content Ingestion + Clarify Foundations (in progress)</span>
               </span>
               <span class="badge" id="next-milestone">
-                Next milestone: Strategist/Muse surfaces that answer “what should we post next?” at a glance.
+                Next milestone: ingestion → analysis → memories (reliable), then Strategist/Muse “what should we post next?” surfaces.
               </span>
             </div>
           </div>
@@ -528,10 +528,10 @@
                 <div>
                   <div class="status-main-label">What you can try first</div>
                   <ul class="card-body" id="status-actions">
-                    <li>Run 2–3 short voice‑learning sessions (5–10 minutes) in the trainer to teach the system how you speak.</li>
-                    <li>Use the fluid, real-time voice exchange when you want an open conversation with your digital twin (no fixed script).</li>
-                    <li>Open each saved session in the internal console to review the transcript, traits, and evolving persona.</li>
-                    <li>From a strong session, generate a few draft ideas in the console and see how they sound in your voice; keep or tweak the ones that feel most like you.</li>
+                    <li>Run a short voice session when you want to teach the twin how you speak (saved transcript + traits).</li>
+                    <li>Drop real inputs into the content ingest app (photos, videos, Instagram export) so the twin learns from what you actually share.</li>
+                    <li>Use Clarify when the system asks a simple question: answer, skip, or come back later — one question at a time.</li>
+                    <li>Open the internal console to review what was saved (sessions, traits, persona) and keep an eye on how the twin is evolving.</li>
                   </ul>
                 </div>
               </div>
@@ -541,7 +541,7 @@
       </header>
 
       <section class="timeline">
-        <div class="section-title">Phases at a glance · <a href="#trainer-plan" class="link">Jeremy Trainer V1 plan &amp; diagrams</a></div>
+        <div class="section-title">Phases at a glance · <a href="#trainer-plan" class="link">Phase 1 plan &amp; diagrams</a></div>
         <div class="timeline-grid" id="timeline-grid">
           <div class="phase-card">
             <div class="phase-label">Phase 0</div>
@@ -562,7 +562,7 @@
               and guardrails—so ideas feel actionable, not generic.
             </div>
             <div class="phase-status">
-              ● Planned
+              ● In progress (foundations)
             </div>
           </div>
           <div class="phase-card">
@@ -594,28 +594,28 @@
         <div class="plan-block">
           <div class="plan-head">
             <span class="plan-badge">Live plan</span>
-            <h2 class="plan-title">Jeremy Trainer V1 – Live conversational AI</h2>
+            <h2 class="plan-title">Phase 1 – Content ingestion + clarification loop</h2>
           </div>
           <p class="plan-overview">
-            Phase 1 jeremy-trainer: a conversational trainer (text-first + audio analysis) that saves sessions,
-            extracts traits, and connects into persona and content-draft generation. Historical and live social
-            posts will feed the same schema so the Digital Twin stays aligned with Jeremy’s public voice.
+            Phase 1 is about feeding the twin with real-world signal and filling the gaps: ingest the content Jeremy
+            already produces (photos, videos, exports), extract structured memories, and ask quick clarification questions
+            when the system is unsure. This is the bridge between “we can store sessions” and “we can suggest what to post next.”
           </p>
 
           <div class="plan-subtitle">Goal</div>
           <ul class="plan-list">
-            <li>Jeremy can run real sessions today; sessions are persisted with traits extraction.</li>
-            <li>Clear path from trainer → console (sessions, persona, drafts).</li>
-            <li>Schema and pipeline design for past/live social media → persona and content-draft pipeline.</li>
+            <li>Bring in real content (uploads + exports) so the twin learns from what Jeremy actually shares.</li>
+            <li>Turn that content into structured memories/persona updates (without overwriting blindly).</li>
+            <li>Ask simple questions when needed, without friction: one at a time, skippable, and safe.</li>
           </ul>
 
           <div class="plan-subtitle">Phase 1 scope (current)</div>
           <ul class="plan-list">
-            <li><strong>Trainer → console API:</strong> All calls use console backend; Zod-validated payloads; transcript-based flow (no live <code>connect</code> yet).</li>
-            <li><strong>Session flow:</strong> Session setup, structured transcript builder (turns), audio helper for voice match only.</li>
-            <li><strong>Preflight:</strong> Status panel checks Supabase, <code>JEREMY_USER_ID</code>, Gemini key.</li>
-            <li><strong>Console links:</strong> Deep link to session page; persona update path; content-draft from session (Phase 1.5).</li>
-            <li><strong>Guardrails:</strong> Copy explaining sessions; validation (no empty user turns); graceful errors.</li>
+            <li><strong>Content ingest:</strong> Uploads write to Supabase storage + a durable <code>ingested_content</code> record (dedupe by hash).</li>
+            <li><strong>Import hooks:</strong> Instagram JSON import path exists; photo analysis hook exists (to be made fully reliable).</li>
+            <li><strong>Clarify app:</strong> One-question flow (answer/skip) is in place to capture missing human context.</li>
+            <li><strong>Console visibility:</strong> Review saved sessions/persona; next step is better “ingested content” visibility and memory diffs.</li>
+            <li><strong>Guardrails:</strong> Skip is always safe; no “gotcha” questions; errors should fail gracefully without blocking Jeremy.</li>
           </ul>
 
           <div class="plan-subtitle">Social integration (Phases 2–3)</div>
